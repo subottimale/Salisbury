@@ -1,4 +1,4 @@
-/*2021 Ottimo Ottimale
+/*2023 Ottimo Ottimale
 
  */
 #include QMK_KEYBOARD_H
@@ -19,7 +19,8 @@ enum combos {
   DF_SPC,
   JK_SPC,
   SD_TAB,
-  EF_ALT
+  EF_ALT,
+  DOT
 };
 
 const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
@@ -30,6 +31,7 @@ const uint16_t PROGMEM df_combo[] = {KC_D, LT(_NAV, KC_F), COMBO_END};
 const uint16_t PROGMEM jk_combo[] = {LT(_NUM, KC_J), LT(_FUN, KC_K), COMBO_END};
 const uint16_t PROGMEM sd_combo[] = {LT(_MOS, KC_S), KC_D, COMBO_END};
 const uint16_t PROGMEM ef_combo[] = {KC_E, LT(_NAV, KC_F), COMBO_END};
+const uint16_t PROGMEM dot_combo[] = {KC_COMMA, KC_SLASH, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   [UI_BSPC] = COMBO(ui_combo,KC_BSPC),
@@ -39,7 +41,8 @@ combo_t key_combos[COMBO_COUNT] = {
   [DF_SPC] = COMBO(df_combo,KC_SPC),
   [JK_SPC] = COMBO(jk_combo,KC_SPC),
   [SD_TAB] = COMBO(sd_combo,KC_TAB),
-  [EF_ALT] = COMBO(ef_combo,KC_LALT)
+  [EF_ALT] = COMBO(ef_combo,KC_LALT),
+  [DOT] = COMBO(dot_combo,KC_DOT)
 };
 
 enum custom_keycodes {
@@ -89,35 +92,35 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-	[_BASE] = LAYOUT_smol_bar(
+	[_BASE] = LAYOUT_smol(
 		KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
 		SH_A,    MOS_S,   KC_D,    NAV_F,   KC_G,    KC_H,    NUM_J,   FUN_K,   CTL_L,   SH_QU,
 		CTL_Z,   KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_SLSH, KC_DOT,
         ALT_TAB,                   KC_ENT,   ZOOM,   KC_SPC,                              ALT_ENT
     ),
 
-	[_NAV] = LAYOUT_smol_bar(
+	[_NAV] = LAYOUT_smol(
 		KC_LBRC, KC_RBRC, KC_LALT, KC_NO,   KC_NO,   KC_EQL,  KC_LEFT,  KC_UP,   KC_HOME, KC_PGUP,
 		CTL_SFT, KC_LCTL, KC_LSFT, KC_TRNS, KC_NO,   KC_MINS, KC_RGHT,  KC_DOWN, KC_END,  KC_PGDN,
 		KC_LALT, KC_NO,   KC_NO,   KC_NO,   KC_PIPE, KC_LPRN, KC_RPRN,  KC_NO,   KC_SCLN, KC_COLN,
         KC_NO,                     KC_NO,    KC_NO,   KC_NO,                                     KC_NO
     ),
 
-	[_FUN] = LAYOUT_smol_bar(
+	[_FUN] = LAYOUT_smol(
 		KC_TILD, KC_CAPS, KC_F2,   KC_F4,   KC_F12,   KC_F7,   KC_F11,  KC_NO,   ALT_ENT, ALT_TAB,
 		KC_ESC,  KC_TAB,  KC_LALT, KC_BSPC, KC_DEL,   KC_SLSH, KC_LSFT, KC_TRNS, KC_NO,   KC_LCTL,
-		KC_LALT, UNDO,    KC_LSFT, KC_NO,   KC_NO,    KC_NO,   KC_LEAD, KC_NO,   KC_NO,   RESET,
-        KC_NO,                     KC_SCROLLLOCK,    KC_NO,   KC_NO,                               KC_NO
+		KC_LALT, UNDO,    KC_LSFT, KC_NO,   KC_NO,    KC_NO,   KC_LEAD, KC_NO,   KC_NO,   QK_RBT,
+        KC_NO,                     KC_SCROLL_LOCK,    KC_NO,   KC_NO,                               KC_NO
     ),
 
-  [_NUM] = LAYOUT_smol_bar(
+  [_NUM] = LAYOUT_smol(
 		KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,
 		KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_NO,    KC_TRNS, KC_LSFT, CTL_SFT, KC_NO,
 		CNV_DLR, CNV_PCT, DECIM_DEC, DECIM_INC,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_LCTL,
         KC_NO,                     KC_NO,    KC_NO,   KC_NO,                               KC_NO
     ),
 
-	[_MOS] = LAYOUT_smol_bar(
+	[_MOS] = LAYOUT_smol(
 		KC_NO,   KC_NO,   KC_WH_U, KC_WH_D, KC_NO,   KC_NO,    KC_MS_L, KC_MS_U, KC_NO,   KC_NO,
 		KC_GRV,  KC_TRNS, KC_NO,   KC_BTN1, KC_NO,   KC_NO,    KC_MS_R, KC_MS_D, KC_NO,   KC_NO,
 		KC_LCTL, KC_NO,   KC_NO,   KC_BTN2, KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,
