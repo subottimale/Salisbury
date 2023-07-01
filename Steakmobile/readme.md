@@ -1,6 +1,6 @@
 First thing to know is that this is a patently ridiculous idea and, if you're seriously considering this, you're a ridiculous person. Congrats!
 <br />
-<br />Next thing to know is this is a Salisbury that's been modified for use in a Barca case (lopro minivan); therefore Coriander mounting. You may ask, "Why the wacky graphics?" and you would be right to do so
+<br />Next thing to know is this is a Salisbury that's been modified for use with Coriander mounting (orignially for Barca, a boat that never arrived). You may ask, "Why the wacky graphics?" and you would be right to do so
 <br />
 <br />The only layout offered is 3-1-3, so it uses the 'smol' firmware from Salisbury. Don't look for firmware here, there ain't any
 <br />
