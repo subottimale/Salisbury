@@ -4,7 +4,7 @@ First thing to know is that this is a patently ridiculous idea and, if you're se
 <br />
 <br />The only layout offered is 3-1-3, so it uses the 'smol' firmware from Salisbury. Don't look for firmware here, there ain't any
 <br />
-<br />Point C is that I don't know if the Barca setup works at all, so I made my own silly dogbone-shaped case, featuring amateur sound mitigation contouring (boring flat bottom tray available, too...but why damnit why?!)
+<br />Point C is that I made my own silly dogbone-shaped case, featuring amateur sound mitigation contouring (boring flat bottom tray available, too...but why damnit why?!)
 <br />
 <br />**BEHOLD!!!**
 <br />
